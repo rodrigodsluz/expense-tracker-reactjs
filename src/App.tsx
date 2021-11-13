@@ -1,10 +1,16 @@
 import React from 'react';
+
+import Expenses from './components/Expenses';
+
+import expenses from './utils/expenses';
+
 import { GlobalStyle } from './styles/global';
 
 const App = (): JSX.Element => (
   <>
     <GlobalStyle />
-    Hello World!
+    <h2>Lets get started!</h2>
+    <Expenses items={expenses} />
   </>
 );
 
