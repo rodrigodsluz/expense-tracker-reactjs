@@ -12,9 +12,10 @@ import {
 
 type Props = {
   onSaveExpenseData: (enteredExpenseData: IExtenseItem) => void;
+  onCancel: () => void;
 };
 
-const ExpenseForm = ({ onSaveExpenseData }: Props): JSX.Element => {
+const ExpenseForm = ({ onSaveExpenseData, onCancel }: Props): JSX.Element => {
   const [enteredTitle, setEnteredTitle] = useState('');
   const [enteredAmount, setEnteredAmount] = useState('');
   const [enteredDate, setEnteredDate] = useState('');
@@ -36,7 +37,7 @@ const ExpenseForm = ({ onSaveExpenseData }: Props): JSX.Element => {
 
     const expenseData = {
       title: enteredTitle,
-      amount: Number(enteredAmount),
+      amount: +enteredAmount,
       date: new Date(enteredDate),
     };
 
@@ -79,6 +80,9 @@ const ExpenseForm = ({ onSaveExpenseData }: Props): JSX.Element => {
         </NewExpenseControl>
       </NewExpenseControls>
       <NewExpenseActions>
+        <button type="button" onClick={onCancel}>
+          Cancel
+        </button>
         <button type="submit">Add Expense</button>
       </NewExpenseActions>
     </form>

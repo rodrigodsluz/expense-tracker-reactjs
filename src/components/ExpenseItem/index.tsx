@@ -12,13 +12,15 @@ export interface IExtenseItem {
 }
 
 const ExpenseItem = ({ date, title, amount }: IExtenseItem): JSX.Element => (
-  <Card className="expense-item">
-    <ExpenseDate date={date} />
-    <ExpenseItemDescription>
-      <h2>{title}</h2>
-      <ExpenseItemPrice>${amount}</ExpenseItemPrice>
-    </ExpenseItemDescription>
-  </Card>
+  <li>
+    <Card className="expense-item">
+      <ExpenseDate date={date} />
+      <ExpenseItemDescription>
+        <h2>{title}</h2>
+        <ExpenseItemPrice>${amount}</ExpenseItemPrice>
+      </ExpenseItemDescription>
+    </Card>
+  </li>
 );
 
 export default ExpenseItem;
