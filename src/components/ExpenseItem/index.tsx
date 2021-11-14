@@ -5,13 +5,13 @@ import Card from '../Card';
 
 import { ExpenseItemDescription, ExpenseItemPrice } from './styles';
 
-interface Props {
+export interface IExtenseItem {
   date: Date;
   title: string;
   amount: number;
 }
 
-const ExpenseItem = ({ date, title, amount }: Props): JSX.Element => (
+const ExpenseItem = ({ date, title, amount }: IExtenseItem): JSX.Element => (
   <Card className="expense-item">
     <ExpenseDate date={date} />
     <ExpenseItemDescription>
